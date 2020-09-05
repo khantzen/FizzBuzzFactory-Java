@@ -3,9 +3,11 @@ package fr.noether.fizzbuzz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ClassicFizzBuzzTest {
+public class ClassicFizzBuzzWith3And5Test {
 
     private FizzBuzz fizzBuzz;
 
@@ -15,7 +17,12 @@ public class ClassicFizzBuzzTest {
 
     @BeforeEach
     public void setup() {
-        this.fizzBuzz = new FizzBuzz(3, 5);
+        this.fizzBuzz = new FizzBuzz(
+                List.of(
+                        Rule.of(3, "Fizz"),
+                        Rule.of(5, "Buzz")
+                )
+        );
     }
 
     @Test

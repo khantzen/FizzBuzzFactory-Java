@@ -3,6 +3,8 @@ package fr.noether.fizzbuzz;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FizzBuzzWith7And11Test {
@@ -15,7 +17,13 @@ public class FizzBuzzWith7And11Test {
 
     @BeforeEach
     public void setup() {
-        this.fizzBuzz = new FizzBuzz(7, 11);
+        this.fizzBuzz = new FizzBuzz(
+                List.of(
+                        Rule.of(7, "Fizz"),
+                        Rule.of(11, "Buzz")
+                )
+
+        );
     }
 
     @Test
@@ -37,4 +45,5 @@ public class FizzBuzzWith7And11Test {
     public void shouldRenderFizzBuzzWhenDivisibleBy11And7() {
         assertFizzBuzzRenderFor(77, "FizzBuzz");
     }
+
 }

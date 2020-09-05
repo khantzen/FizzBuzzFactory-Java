@@ -1,27 +1,27 @@
 package fr.noether.fizzbuzz;
 
-public class FizzBuzz {
-    private final int fizzDivisor;
-    private final int buzzDivisor;
+import java.util.List;
+import java.util.stream.Collectors;
 
-    public FizzBuzz(int fizzDivisor, int buzzDivisor) {
-        this.fizzDivisor = fizzDivisor;
-        this.buzzDivisor = buzzDivisor;
+public class FizzBuzz {
+    private final List<Rule> rules;
+
+    public FizzBuzz(List<Rule> rules) {
+        this.rules = rules;
     }
 
     public String render(int i) {
-        if (i % buzzDivisor == 0 && i % fizzDivisor == 0) {
-            return "FizzBuzz";
+
+        boolean noRuleMatch = this.rules.stream()
+                .noneMatch(rule -> rule.validate(i));
+
+        if (noRuleMatch) {
+            return String.valueOf(i);
         }
 
-        if (i % buzzDivisor == 0) {
-            return "Buzz";
-        }
-
-        if (i % fizzDivisor == 0) {
-            return "Fizz";
-        }
-
-        return String.valueOf(i);
+        return this.rules.stream()
+                .filter(rule -> rule.validate(i))
+                .map(Rule::verb)
+                .collect(Collectors.joining());
     }
 }
