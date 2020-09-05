@@ -1,10 +1,9 @@
 package fr.noether.fizzbuzz;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClassicFizzBuzzTest {
 
@@ -16,12 +15,11 @@ public class ClassicFizzBuzzTest {
 
     @BeforeEach
     public void setup() {
-        this.fizzBuzz = new FizzBuzz();
+        this.fizzBuzz = new FizzBuzz(3, 5);
     }
 
     @Test
     void shouldReturnFizzWhenDivisibleBy3() {
-        var fizzBuzz = new FizzBuzz();
         assertFizzBuzzForValue(3, "Fizz");
     }
 
