@@ -1,18 +1,22 @@
-package fr.noether.fizzbuzz;public class Rule {
-    private final int divisor;
-    private final String verb;
+package fr.noether.fizzbuzz;
 
-    private Rule(int divisor, String verb) {
-        this.divisor = divisor;
+import java.util.function.Predicate;
+
+public class Rule {
+    private final String verb;
+    private final Predicate<Integer> matcher;
+
+    public Rule(Predicate<Integer> matcher, String verb) {
+        this.matcher = matcher;
         this.verb = verb;
     }
 
-    public static Rule of(int divisor, String verb) {
-        return new Rule(divisor, verb);
+    public static Rule of(Predicate<Integer> matcher, String verb) {
+        return new Rule(matcher, verb);
     }
 
     public boolean validate(int i) {
-        return i % divisor == 0;
+        return matcher.test(i);
     }
 
     public String verb() {

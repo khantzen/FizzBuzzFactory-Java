@@ -19,8 +19,8 @@ public class ClassicFizzBuzzWith3And5Test {
     public void setup() {
         this.fizzBuzz = new FizzBuzz(
                 List.of(
-                        Rule.of(3, "Fizz"),
-                        Rule.of(5, "Buzz")
+                        Rule.of(i -> i % 3 == 0, "Fizz"),
+                        Rule.of(i -> i % 5 == 0, "Buzz")
                 )
         );
     }

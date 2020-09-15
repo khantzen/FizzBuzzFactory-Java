@@ -19,9 +19,9 @@ public class FizzBuzzForMoreThan2NumbersTest {
     public void fizzBuzz() {
         this.fizzBuzz = new FizzBuzz(
                 List.of(
-                        Rule.of(13, "Fizz"),
-                        Rule.of(17, "Buzz"),
-                        Rule.of(19, "Bizz")
+                        Rule.of(i -> i % 13 == 0, "Fizz"),
+                        Rule.of(i -> i % 17 == 0, "Buzz"),
+                        Rule.of(i -> i % 19 == 0, "Bizz")
                 )
         );
     }

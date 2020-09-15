@@ -19,8 +19,8 @@ public class FizzBuzzWith7And11Test {
     public void setup() {
         this.fizzBuzz = new FizzBuzz(
                 List.of(
-                        Rule.of(7, "Fizz"),
-                        Rule.of(11, "Buzz")
+                        Rule.of(i -> i % 7 == 0, "Fizz"),
+                        Rule.of(i -> i % 11 == 0, "Buzz")
                 )
 
         );
