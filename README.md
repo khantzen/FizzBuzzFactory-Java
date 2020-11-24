@@ -11,7 +11,7 @@ that the iteration are not perfectly matching my code
 
 ### Iteration 1
 
-Write a _fizzBuzz35_ method that take an integer as an input and return:
+Write a _fizzBuzzIter1_ method that take an integer as an input and return:
 
 - If the input is divisible by 3, return Fizz
 - If the input is divisible by 5, return Buzz
@@ -20,7 +20,7 @@ Write a _fizzBuzz35_ method that take an integer as an input and return:
 
 ### Iteration 2
 
-Write a _fizzBuzz711_ method that take an integer as an input and return:
+Write a _fizzBuzzIter2_ method that take an integer as an input and return:
 
 - If the input is divisible by 7, return Fizz
 - If the input is divisible by 11, return Buzz
@@ -37,7 +37,7 @@ Write a _fizzBuzz711_ method that take an integer as an input and return:
 
 ### Iteration 3
 
-Write a _fizzBuzz13171923_ method that take an integer as input
+Write a _fizzBuzzIter3_ method that take an integer as input
 
 - If the input is divisible by 13, return Fizz
 - If the input is divisible by 17, return Buzz
